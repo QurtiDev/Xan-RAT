@@ -41,7 +41,7 @@ Improving detection rules (YARA, Sigma(We're already planning to add but you can
 
 Adding support for new RAT families or variants of this, either public or prviate
 
-Enhancing build scripts(the raw dll should be pulled from somewhere not hardcoded, for now it's fine) and documentation of usage for research
+Enhancing build scripts(the raw dlls should be pulled from their respective build repos not hardcoded, for now it's fine) and documentation of usage for research
 
 Reporting issues or bugs in the code of the repository (Will add known bugs section soonish)
 
