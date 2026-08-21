@@ -84,26 +84,26 @@ msbuild HQ.sln
 Once done files will be built into ~/bin/Release
 
 In there you will find HQ.exe, which acts as the C2 management software
-<img width="1087" height="616" alt="image" src="https://github.com/user-attachments/assets/9b628cfe-2552-40ee-9202-49ef3e9dbe98" />
+![img](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/c2management.png)
 
 Run it, and generate your Quasar cert
-<img width="500" height="342" alt="image" src="https://github.com/user-attachments/assets/221df52c-ef7e-460b-85dd-d3cde536231d" />
+![img](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/certpic.png)
 
 Now you have the C2 for Cold Xan RAT working nicely!
 
-<img width="839" height="465" alt="image" src="https://github.com/user-attachments/assets/9d8ff5ef-f538-4b92-8b99-8d477c82430a" />
+![img](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/c2panel.png)
 
 
 
 
 
-<img width="534" height="477" alt="image" src="https://github.com/user-attachments/assets/f3340205-6129-4849-a8aa-451d86be0a40" />
+![img](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/clientbuilder.png)
 
-<img width="895" height="480" alt="image" src="https://github.com/user-attachments/assets/fc90d22e-2597-470b-a925-2310e0f880a7" />
+![img](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/modules.png)
 
 
 ### Client manager
-<img width="1438" height="852" alt="image" src="https://github.com/user-attachments/assets/b90e6a9c-3dcc-4e0a-9926-132061a1f0da" />
+![img](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/clientmanager.png)
 
 
 ### HVNC 
