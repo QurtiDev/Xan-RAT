@@ -35,6 +35,7 @@ Contains Xan RAT, a [Quasar-based](https://github.com/quasar/Quasar) remote acce
 >
 >Note that these are WIP, and still being actively refined and worked on, feel free to modify as needed!!
 
+</br>
 
 ## Contributing
 Contributions are welcome, especially in the following areas:
