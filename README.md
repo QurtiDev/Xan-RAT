@@ -84,7 +84,7 @@ msbuild HQ.sln
 Once done files will be built into ~/bin/Release
 
 In there you will find HQ.exe, which acts as the C2 management software
-![(https://github.com/QurtiDev/Xan-RAT/blob/main/assets/c2management.png)
+![](https://github.com/QurtiDev/Xan-RAT/blob/main/assets/c2management.png)
 
 Run it, and generate your Quasar cert
 ![](https://github.com/QurtiDev/Xan-RAT/blob/main/assets/certpic.png)
