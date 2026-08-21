@@ -107,21 +107,21 @@ Now you have the C2 for Cold Xan RAT working nicely!
 
 
 ### HVNC 
-<img width="1438" height="852" alt="image" src="https://github.com/user-attachments/assets/b3d22bdb-f91f-47c3-b3c5-d3f1a9eac4a9" />
+![img](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/hvnc.png)
 
 
-<img width="1077" height="677" alt="image" src="https://github.com/user-attachments/assets/d2e97073-9d6d-4701-86ff-efd005c3a9b8" />
+![img](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/hvncbrowser.png)
 
 
 ### RDP
-<img width="1439" height="851" alt="image" src="https://github.com/user-attachments/assets/4beeff95-1ef1-494e-8db3-c9618037e1a7" />
+![img](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/rdp.png)
 
 ### Remote Shell
-<img width="1439" height="853" alt="image" src="https://github.com/user-attachments/assets/69547f82-33f9-452c-ae99-91c65de42be6" />
+![img](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/rshell.png)
 
 ### System Backdoor
-<img width="365" height="365" alt="image" src="https://github.com/user-attachments/assets/c01bc3da-42ef-4338-a759-b9149331868b" />
+![img](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/sbackdoor.png)
 
 
 ### Remote Exec
-<img width="505" height="523" alt="image" src="https://github.com/user-attachments/assets/2586d08c-4bfc-44da-81f4-d1118028d985" />
+![img](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/remotexec.png)
