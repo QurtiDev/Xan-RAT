@@ -29,9 +29,9 @@ Contains Xan RAT, a [Quasar-based](https://github.com/quasar/Quasar) remote acce
 > [!TIP]
 > Detection rules we've written for this malware can be found in the following places in this repository
 >
-> [cold-xan-ruleset](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/cold-xan-rat-ruleset.yar) </br>
-> [configured Xan client ruleset](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/configured-client-build-rule.yar) </br>
-> [base-quasar-ruleset](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/base-quasar-rules.yar) </br>
+> [Cold Xan Ruleset](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/cold-xan-rat-ruleset.yar) </br>
+> [Configured Xan Client Ruleset](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/configured-client-build-rule.yar) </br>
+> [Base Quasar Ruleset](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/base-quasar-rules.yar) </br>
 >
 >Note that these are WIP, and still being actively refined and worked on, feel free to modify as needed!!
 
