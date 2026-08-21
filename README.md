@@ -14,7 +14,7 @@ Contains Xan RAT, a [Quasar-based](https://github.com/quasar/Quasar) remote acce
 
 > [!NOTE]
 > 
-> I'm not the original developer of the Cold Xan RAT; I've simply assembled this into a compilable stage with some plugins so it can be tested in an authorized enviroment and properly ruled for research purposes, some code may be changed and modified a bit from original due to issues/bugs that it had.
+> I'm not the original developer of the Cold Xan RAT; I've simply assembled this into a compilable stage with some plugins so it can be tested in an authorized enviroment and properly ruled for research purposes, although some code may be changed and modified a bit from original due to issues/bugs that it had.
 > 
 
 > [!CAUTION]
