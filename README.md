@@ -84,44 +84,44 @@ msbuild HQ.sln
 Once done files will be built into ~/bin/Release
 
 In there you will find HQ.exe, which acts as the C2 management software
-![(https://github.com/QurtiDev/Xan-RAT/tree/main/assets/c2management.png)
+![(https://github.com/QurtiDev/Xan-RAT/blob/main/assets/c2management.png)
 
 Run it, and generate your Quasar cert
-![](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/certpic.png)
+![](https://github.com/QurtiDev/Xan-RAT/blob/main/assets/certpic.png)
 
 Now you have the C2 for Cold Xan RAT working nicely!
 
-![](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/c2panel.png)
+![](https://github.com/QurtiDev/Xan-RAT/blob/main/assets/c2panel.png)
 
 
 
 
 
-![](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/clientbuilder.png)
+![](https://github.com/QurtiDev/Xan-RAT/blob/main/assets/clientbuilder.png)
 
-![](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/modules.png)
+![](https://github.com/QurtiDev/Xan-RAT/blob/main/assets/modules.png)
 
 
 ### Client manager
-![](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/clientmanager.png)
+![](https://github.com/QurtiDev/Xan-RAT/blob/main/assets/clientmanager.png)
 
 
 ### HVNC 
-![](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/hvnc.png)
+![](https://github.com/QurtiDev/Xan-RAT/blob/main/assets/hvnc.png)
 
 
-![](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/hvncbrowser.png)
+![](https://github.com/QurtiDev/Xan-RAT/blob/main/assets/hvncbrowser.png)
 
 
 ### RDP
-![](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/rdp.png)
+![](https://github.com/QurtiDev/Xan-RAT/blob/main/assets/rdp.png)
 
 ### Remote Shell
-![](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/rshell.png)
+![](https://github.com/QurtiDev/Xan-RAT/blob/main/assets/rshell.png)
 
 ### System Backdoor
-![](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/sbackdoor.png)
+![](https://github.com/QurtiDev/Xan-RAT/blob/main/assets/sbackdoor.png)
 
 
 ### Remote Exec
-![](https://github.com/QurtiDev/Xan-RAT/tree/main/assets/remotexec.png)
+![](https://github.com/QurtiDev/Xan-RAT/blob/main/assets/remotexec.png)
