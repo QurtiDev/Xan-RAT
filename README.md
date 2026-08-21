@@ -37,7 +37,7 @@ Contains Xan RAT, a [Quasar-based](https://github.com/quasar/Quasar) remote acce
 ## Contributing
 Contributions are welcome, especially in the following areas:
 
-Improving detection rules (YARA, Sigma(We're already planning to add but you can also do so), etc.) and reducing false positives
+Improving detection rules YARA, Sigma(We're already planning to add but you can also do so), etc.) and reducing false positives
 
 Adding support for new RAT families or variants of this, either public or prviate
 
