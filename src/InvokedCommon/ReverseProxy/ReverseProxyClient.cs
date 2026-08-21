@@ -1,0 +1,152 @@
+﻿
+
+using InvokedCommon.Messages.ReverseProxy;
+using InvokedCommon.Networking;
+using System;
+using System.Net;
+using System.Net.Sockets;
+
+
+namespace InvokedCommon.ReverseProxy
+{
+	public class ReverseProxyClient
+	{
+		public const int BUFFER_SIZE = 8192;
+		private byte[] _buffer;
+		private bool _disconnectIsSend;
+
+		public int ConnectionId { get; private set; }
+
+		public Socket Handle { get; private set; }
+
+		public string Target { get; private set; }
+
+		public int Port { get; private set; }
+
+		public Client Client { get; private set; }
+
+		public ReverseProxyClient(ReverseProxyConnect command, Client client)
+		{
+			this.ConnectionId = command.ConnectionId;
+			this.Target = command.Target;
+			this.Port = command.Port;
+			this.Client = client;
+			this.Handle = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+			this.Handle.BeginConnect(command.Target, command.Port, new AsyncCallback(this.Handle_Connect), (object)null);
+		}
+
+		private void Handle_Connect(IAsyncResult ar)
+		{
+			try
+			{
+				this.Handle.EndConnect(ar);
+			}
+			catch
+			{
+			}
+			if (this.Handle.Connected)
+			{
+				try
+				{
+					this._buffer = new byte[8192];
+					this.Handle.BeginReceive(this._buffer, 0, this._buffer.Length, SocketFlags.None, new AsyncCallback(this.AsyncReceive), (object)null);
+				}
+				catch
+				{
+					this.Client.Send<ReverseProxyConnectResponse>(new ReverseProxyConnectResponse()
+					{
+						ConnectionId = this.ConnectionId,
+						IsConnected = false,
+						LocalAddress = (byte[])null,
+						LocalPort = 0,
+						HostName = this.Target
+					});
+					this.Disconnect();
+				}
+				IPEndPoint localEndPoint = (IPEndPoint)this.Handle.LocalEndPoint;
+				this.Client.Send<ReverseProxyConnectResponse>(new ReverseProxyConnectResponse()
+				{
+					ConnectionId = this.ConnectionId,
+					IsConnected = true,
+					LocalAddress = localEndPoint.Address.GetAddressBytes(),
+					LocalPort = localEndPoint.Port,
+					HostName = this.Target
+				});
+			}
+			else
+				this.Client.Send<ReverseProxyConnectResponse>(new ReverseProxyConnectResponse()
+				{
+					ConnectionId = this.ConnectionId,
+					IsConnected = false,
+					LocalAddress = (byte[])null,
+					LocalPort = 0,
+					HostName = this.Target
+				});
+		}
+
+		private void AsyncReceive(IAsyncResult ar)
+		{
+			try
+			{
+				int length = this.Handle.EndReceive(ar);
+				if (length <= 0)
+				{
+					this.Disconnect();
+					return;
+				}
+				byte[] destinationArray = new byte[length];
+				Array.Copy((Array)this._buffer, (Array)destinationArray, length);
+				this.Client.Send<ReverseProxyData>(new ReverseProxyData()
+				{
+					ConnectionId = this.ConnectionId,
+					Data = destinationArray
+				});
+			}
+			catch
+			{
+				this.Disconnect();
+				return;
+			}
+			try
+			{
+				this.Handle.BeginReceive(this._buffer, 0, this._buffer.Length, SocketFlags.None, new AsyncCallback(this.AsyncReceive), (object)null);
+			}
+			catch
+			{
+				this.Disconnect();
+			}
+		}
+
+		public void Disconnect()
+		{
+			if (!this._disconnectIsSend)
+			{
+				this._disconnectIsSend = true;
+				this.Client.Send<ReverseProxyDisconnect>(new ReverseProxyDisconnect()
+				{
+					ConnectionId = this.ConnectionId
+				});
+			}
+			try
+			{
+				this.Handle.Close();
+			}
+			catch
+			{
+			}
+			this.Client.RemoveProxyClient(this.ConnectionId);
+		}
+
+		public void SendToTargetServer(byte[] data)
+		{
+			try
+			{
+				this.Handle.Send(data);
+			}
+			catch
+			{
+				this.Disconnect();
+			}
+		}
+	}
+}

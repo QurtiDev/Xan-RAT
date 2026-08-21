@@ -1,0 +1,184 @@
+﻿using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Windows.Forms;
+using Guna.UI2.WinForms;
+using InvokedServer.Properties;
+
+namespace InvokedServer.Forms
+{
+    partial class FrmResetSurvival
+    {
+        private IContainer components;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && this.components != null)
+                this.components.Dispose();
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(FrmResetSurvival));
+            this.FilePathBtn = new Guna2GradientButton();
+            this.InstallBtn = new Guna2GradientButton();
+            this.FileTextbox = new Guna2TextBox();
+            this.LogsTextbox = new Guna2TextBox();
+            this.logsVScrollBar = new Guna2VScrollBar();
+            this.statusLabel = new Label();
+            this.PluginLabel = new Label();
+            this.SuspendLayout();
+            this.FilePathBtn.Animated = true;
+            this.FilePathBtn.BackColor = Color.FromArgb(62, 72, 88);
+            this.FilePathBtn.BorderColor = Color.FromArgb(72, 82, 98);
+            this.FilePathBtn.BorderRadius = 2;
+            this.FilePathBtn.BorderThickness = 1;
+            this.FilePathBtn.DisabledState.BorderColor = Color.DarkGray;
+            this.FilePathBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            this.FilePathBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            this.FilePathBtn.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            this.FilePathBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            this.FilePathBtn.Enabled = false;
+            this.FilePathBtn.FillColor = Color.FromArgb(35, 35, 35);
+            this.FilePathBtn.FillColor2 = Color.FromArgb(62, 72, 88);
+            this.FilePathBtn.Font = new Font("Segoe UI", 8.25f);
+            this.FilePathBtn.ForeColor = Color.White;
+            this.FilePathBtn.GradientMode = LinearGradientMode.ForwardDiagonal;
+            this.FilePathBtn.Image = (Image)Resources.inbox;
+            this.FilePathBtn.ImageSize = new Size(16, 16);
+            this.FilePathBtn.Location = new Point(12, 12);
+            this.FilePathBtn.Name = "FilePathBtn";
+            this.FilePathBtn.Size = new Size(93, 23);
+            this.FilePathBtn.TabIndex = 31;
+            this.FilePathBtn.Text = "Select File";
+            this.FilePathBtn.Click += new EventHandler(this.ProgramsListBtn_Click);
+            this.InstallBtn.Animated = true;
+            this.InstallBtn.BorderColor = Color.FromArgb(200, 200, 0);
+            this.InstallBtn.BorderRadius = 2;
+            this.InstallBtn.BorderThickness = 1;
+            this.InstallBtn.DisabledState.BorderColor = Color.DarkGray;
+            this.InstallBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            this.InstallBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            this.InstallBtn.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            this.InstallBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            this.InstallBtn.Enabled = false;
+            this.InstallBtn.FillColor = Color.FromArgb(35, 35, 35);
+            this.InstallBtn.FillColor2 = Color.FromArgb(100, 100, 35);
+            this.InstallBtn.Font = new Font("Segoe UI", 8.25f);
+            this.InstallBtn.ForeColor = Color.FromArgb(250, 250, 0);
+            this.InstallBtn.GradientMode = LinearGradientMode.ForwardDiagonal;
+            this.InstallBtn.Location = new Point(280, 69);
+            this.InstallBtn.Name = "InstallBtn";
+            this.InstallBtn.Size = new Size(93, 23);
+            this.InstallBtn.TabIndex = 32;
+            this.InstallBtn.Text = "Install";
+            this.InstallBtn.Click += new EventHandler(this.InstallBtn_Click);
+            this.FileTextbox.Animated = true;
+            this.FileTextbox.BorderColor = Color.FromArgb(200, 200, 0);
+            this.FileTextbox.Cursor = Cursors.IBeam;
+            this.FileTextbox.DefaultText = "";
+            this.FileTextbox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            this.FileTextbox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            this.FileTextbox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            this.FileTextbox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            this.FileTextbox.Enabled = false;
+            this.FileTextbox.FillColor = Color.FromArgb(70, 70, 35);
+            this.FileTextbox.FocusedState.BorderColor = Color.FromArgb(94, 148, (int)byte.MaxValue);
+            this.FileTextbox.Font = new Font("Segoe UI", 9f);
+            this.FileTextbox.ForeColor = Color.FromArgb(250, 250, 0);
+            this.FileTextbox.HoverState.BorderColor = Color.FromArgb(94, 148, (int)byte.MaxValue);
+            this.FileTextbox.Location = new Point(12, 41);
+            this.FileTextbox.Name = "FileTextbox";
+            this.FileTextbox.PasswordChar = char.MinValue;
+            this.FileTextbox.PlaceholderText = "Stub File Path";
+            this.FileTextbox.ReadOnly = true;
+            this.FileTextbox.SelectedText = "";
+            this.FileTextbox.Size = new Size(361, 22);
+            this.FileTextbox.TabIndex = 33;
+            this.FileTextbox.TextAlign = HorizontalAlignment.Center;
+            this.LogsTextbox.BackColor = Color.FromArgb(62, 72, 88);
+            this.LogsTextbox.BorderColor = Color.FromArgb(72, 82, 98);
+            this.LogsTextbox.Cursor = Cursors.IBeam;
+            this.LogsTextbox.DefaultText = "";
+            this.LogsTextbox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            this.LogsTextbox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            this.LogsTextbox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            this.LogsTextbox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            this.LogsTextbox.FillColor = Color.FromArgb(62, 72, 88);
+            this.LogsTextbox.FocusedState.BorderColor = Color.FromArgb(94, 148, (int)byte.MaxValue);
+            this.LogsTextbox.Font = new Font("Segoe UI", 9f);
+            this.LogsTextbox.ForeColor = Color.White;
+            this.LogsTextbox.HoverState.BorderColor = Color.FromArgb(94, 148, (int)byte.MaxValue);
+            this.LogsTextbox.Location = new Point(12, 104);
+            this.LogsTextbox.Multiline = true;
+            this.LogsTextbox.Name = "LogsTextbox";
+            this.LogsTextbox.PasswordChar = char.MinValue;
+            this.LogsTextbox.PlaceholderText = "Logs";
+            this.LogsTextbox.ReadOnly = true;
+            this.LogsTextbox.SelectedText = "";
+            this.LogsTextbox.Size = new Size(361, 161);
+            this.LogsTextbox.TabIndex = 34;
+            this.logsVScrollBar.AutoSize = true;
+            this.logsVScrollBar.BindingContainer = (Control)this.LogsTextbox;
+            this.logsVScrollBar.FillColor = Color.FromArgb(58, 61, 76);
+            this.logsVScrollBar.InUpdate = false;
+            this.logsVScrollBar.LargeChange = 1;
+            this.logsVScrollBar.Location = new Point(346, 113);
+            this.logsVScrollBar.Maximum = 1;
+            this.logsVScrollBar.Name = "logsVScrollBar";
+            this.logsVScrollBar.ScrollbarSize = 18;
+            this.logsVScrollBar.Size = new Size(18, 143);
+            this.logsVScrollBar.TabIndex = 35;
+            this.logsVScrollBar.ThumbColor = Color.FromArgb(39, 52, 66);
+            this.logsVScrollBar.ThumbSize = 5f;
+            this.statusLabel.ForeColor = Color.White;
+            this.statusLabel.Image = (Image)Resources.flag_yellow;
+            this.statusLabel.ImageAlign = ContentAlignment.MiddleLeft;
+            this.statusLabel.Location = new Point(9, 74);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.RightToLeft = RightToLeft.No;
+            this.statusLabel.Size = new Size(74, 18);
+            this.statusLabel.TabIndex = 36;
+            this.statusLabel.Text = "Stage:";
+            this.statusLabel.TextAlign = ContentAlignment.MiddleCenter;
+            this.PluginLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            this.PluginLabel.AutoSize = true;
+            this.PluginLabel.BackColor = Color.Black;
+            this.PluginLabel.ForeColor = Color.OrangeRed;
+            this.PluginLabel.Location = new Point(223, 12);
+            this.PluginLabel.Name = "PluginLabel";
+            this.PluginLabel.Size = new Size(152, 13);
+            this.PluginLabel.TabIndex = 43;
+            this.PluginLabel.Text = "Checking if Module is loaded...";
+            this.AutoScaleDimensions = new SizeF(96f, 96f);
+            this.AutoScaleMode = AutoScaleMode.Dpi;
+            this.BackColor = Color.FromArgb(58, 61, 76);
+            this.ClientSize = new Size(387, 278);
+            this.Controls.Add((Control)this.logsVScrollBar);
+            this.Controls.Add((Control)this.PluginLabel);
+            this.Controls.Add((Control)this.statusLabel);
+            this.Controls.Add((Control)this.LogsTextbox);
+            this.Controls.Add((Control)this.FileTextbox);
+            this.Controls.Add((Control)this.InstallBtn);
+            this.Controls.Add((Control)this.FilePathBtn);
+            this.Icon = (Icon)resources.GetObject("$this.Icon");
+            this.Name = "FrmResetSurvival";
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Text = "FrmResetSurvival";
+            this.FormClosing += new FormClosingEventHandler(this.FrmResetSurvival_FormClosing);
+            this.Load += new EventHandler(this.FrmResetSurvival_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+
+        private Guna2GradientButton FilePathBtn;
+        private Guna2GradientButton InstallBtn;
+        private Guna2TextBox FileTextbox;
+        private Guna2TextBox LogsTextbox;
+        private Guna2VScrollBar logsVScrollBar;
+        private Label statusLabel;
+        private Label PluginLabel;
+    }
+}

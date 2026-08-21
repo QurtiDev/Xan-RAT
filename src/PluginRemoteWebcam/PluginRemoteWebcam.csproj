@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D30E7A5-7BCD-4F9A-8786-1D1B845C3011}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>PluginRemoteWebcam</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>AForge.Video</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IVideoSource.cs" />
+    <Compile Include="NewFrameEventHandler.cs" />
+    <Compile Include="VideoSourceErrorEventHandler.cs" />
+    <Compile Include="PlayingFinishedEventHandler.cs" />
+    <Compile Include="ReasonToFinishPlaying.cs" />
+    <Compile Include="NewFrameEventArgs.cs" />
+    <Compile Include="VideoSourceErrorEventArgs.cs" />
+    <Compile Include="DirectShow\CameraControlProperty.cs" />
+    <Compile Include="DirectShow\CameraControlFlags.cs" />
+    <Compile Include="DirectShow\FilterInfo.cs" />
+    <Compile Include="DirectShow\FilterInfoCollection.cs" />
+    <Compile Include="DirectShow\PhysicalConnectorType.cs" />
+    <Compile Include="DirectShow\FilterCategory.cs" />
+    <Compile Include="DirectShow\VideoCapabilities.cs" />
+    <Compile Include="DirectShow\VideoCaptureDevice.cs" />
+    <Compile Include="DirectShow\VideoInput.cs" />
+    <Compile Include="DirectShow\Internals\IAMCameraControl.cs" />
+    <Compile Include="DirectShow\Internals\IAMCrossbar.cs" />
+    <Compile Include="DirectShow\Internals\IAMStreamConfig.cs" />
+    <Compile Include="DirectShow\Internals\IAMVideoControl.cs" />
+    <Compile Include="DirectShow\Internals\IBaseFilter.cs" />
+    <Compile Include="DirectShow\Internals\ICaptureGraphBuilder2.cs" />
+    <Compile Include="DirectShow\Internals\ICreateDevEnum.cs" />
+    <Compile Include="DirectShow\Internals\IEnumFilters.cs" />
+    <Compile Include="DirectShow\Internals\IEnumPins.cs" />
+    <Compile Include="DirectShow\Internals\IFilterGraph.cs" />
+    <Compile Include="DirectShow\Internals\IFilterGraph2.cs" />
+    <Compile Include="DirectShow\Internals\IGraphBuilder.cs" />
+    <Compile Include="DirectShow\Internals\IMediaControl.cs" />
+    <Compile Include="DirectShow\Internals\IMediaEventEx.cs" />
+    <Compile Include="DirectShow\Internals\IPin.cs" />
+    <Compile Include="DirectShow\Internals\IPropertyBag.cs" />
+    <Compile Include="DirectShow\Internals\IReferenceClock.cs" />
+    <Compile Include="DirectShow\Internals\ISampleGrabber.cs" />
+    <Compile Include="DirectShow\Internals\ISampleGrabberCB.cs" />
+    <Compile Include="DirectShow\Internals\ISpecifyPropertyPages.cs" />
+    <Compile Include="DirectShow\Internals\PinDirection.cs" />
+    <Compile Include="DirectShow\Internals\AMMediaType.cs" />
+    <Compile Include="DirectShow\Internals\PinInfo.cs" />
+    <Compile Include="DirectShow\Internals\FilterInfo.cs" />
+    <Compile Include="DirectShow\Internals\VideoInfoHeader.cs" />
+    <Compile Include="DirectShow\Internals\VideoInfoHeader2.cs" />
+    <Compile Include="DirectShow\Internals\BitmapInfoHeader.cs" />
+    <Compile Include="DirectShow\Internals\RECT.cs" />
+    <Compile Include="DirectShow\Internals\CAUUID.cs" />
+    <Compile Include="DirectShow\Internals\DsEvCode.cs" />
+    <Compile Include="DirectShow\Internals\AnalogVideoStandard.cs" />
+    <Compile Include="DirectShow\Internals\VideoControlFlags.cs" />
+    <Compile Include="DirectShow\Internals\VideoStreamConfigCaps.cs" />
+    <Compile Include="DirectShow\Internals\FilterState.cs" />
+    <Compile Include="DirectShow\Internals\Clsid.cs" />
+    <Compile Include="DirectShow\Internals\FormatType.cs" />
+    <Compile Include="DirectShow\Internals\MediaType.cs" />
+    <Compile Include="DirectShow\Internals\MediaSubType.cs" />
+    <Compile Include="DirectShow\Internals\PinCategory.cs" />
+    <Compile Include="DirectShow\Internals\FindDirection.cs" />
+    <Compile Include="DirectShow\Internals\Win32.cs" />
+    <Compile Include="Plugin\Plugin.cs" />
+    <Compile Include="Plugin\MessageHandlers\PluginWebcamHandler.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InvokedCommon\InvokedCommon.csproj">
+      <Project>{467046a7-a9ca-439d-bcf4-10ce2913ea5f}</Project>
+      <Name>InvokedCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if not exist "$(TargetDir)Plugins\" mkdir "$(TargetDir)Plugins"
+move /Y "$(TargetPath)" "$(TargetDir)Plugins\"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

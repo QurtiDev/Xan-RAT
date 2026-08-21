@@ -1,0 +1,241 @@
+﻿using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Text;
+using System.Windows.Forms;
+using Guna.UI2.WinForms;
+using InvokedServer.Properties;
+
+namespace InvokedServer.Forms
+{
+    partial class FrmPlugins
+    {
+        private IContainer components;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && this.components != null)
+                this.components.Dispose();
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            this.components = (IContainer)new System.ComponentModel.Container();
+            DataGridViewCellStyle gridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle gridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle gridViewCellStyle3 = new DataGridViewCellStyle();
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(FrmPlugins));
+            this.PluginsDataGridView = new Guna2DataGridView();
+            this.FlagCol = new DataGridViewImageColumn();
+            this.StatusCol = new DataGridViewTextBoxColumn();
+            this.NameCol = new DataGridViewTextBoxColumn();
+            this.SizeCol = new DataGridViewTextBoxColumn();
+            this.PlugincontextMenuStrip = new Guna2ContextMenuStrip();
+            this.btnInstall = new ToolStripMenuItem();
+            this.panelTop = new Guna2GradientPanel();
+            this.btnGetLogs = new Guna2GradientButton();
+            this.DataGridFlagImageList = new ImageList(this.components);
+            this.statusStrip = new StatusStrip();
+            this.StatusToolStripStatusLabel = new ToolStripStatusLabel();
+            ((ISupportInitialize)this.PluginsDataGridView).BeginInit();
+            this.PlugincontextMenuStrip.SuspendLayout();
+            this.panelTop.SuspendLayout();
+            this.statusStrip.SuspendLayout();
+            this.SuspendLayout();
+            this.PluginsDataGridView.AllowUserToAddRows = false;
+            this.PluginsDataGridView.AllowUserToDeleteRows = false;
+            this.PluginsDataGridView.AllowUserToOrderColumns = true;
+            this.PluginsDataGridView.AllowUserToResizeRows = false;
+            gridViewCellStyle1.BackColor = Color.FromArgb(35, 35, 35);
+            this.PluginsDataGridView.AlternatingRowsDefaultCellStyle = gridViewCellStyle1;
+            this.PluginsDataGridView.BackgroundColor = Color.FromArgb(35, 35, 35);
+            this.PluginsDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            this.PluginsDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            gridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            gridViewCellStyle2.BackColor = Color.FromArgb(48, 51, 66);
+            gridViewCellStyle2.Font = new Font("Segoe UI", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
+            gridViewCellStyle2.ForeColor = Color.White;
+            gridViewCellStyle2.SelectionBackColor = Color.FromArgb(48, 51, 66);
+            gridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            gridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            this.PluginsDataGridView.ColumnHeadersDefaultCellStyle = gridViewCellStyle2;
+            this.PluginsDataGridView.ColumnHeadersHeight = 20;
+            this.PluginsDataGridView.Columns.AddRange((DataGridViewColumn)this.FlagCol, (DataGridViewColumn)this.StatusCol, (DataGridViewColumn)this.NameCol, (DataGridViewColumn)this.SizeCol);
+            this.PluginsDataGridView.ContextMenuStrip = (ContextMenuStrip)this.PlugincontextMenuStrip;
+            gridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            gridViewCellStyle3.BackColor = Color.FromArgb(35, 35, 35);
+            gridViewCellStyle3.Font = new Font("Segoe UI", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
+            gridViewCellStyle3.ForeColor = Color.White;
+            gridViewCellStyle3.SelectionBackColor = Color.FromArgb(90, 92, 120);
+            gridViewCellStyle3.SelectionForeColor = Color.FromArgb((int)byte.MaxValue, (int)byte.MaxValue, 254);
+            gridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            this.PluginsDataGridView.DefaultCellStyle = gridViewCellStyle3;
+            this.PluginsDataGridView.Dock = DockStyle.Fill;
+            this.PluginsDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
+            this.PluginsDataGridView.GridColor = Color.FromArgb(62, 72, 88);
+            this.PluginsDataGridView.Location = new Point(0, 36);
+            this.PluginsDataGridView.Name = "PluginsDataGridView";
+            this.PluginsDataGridView.ReadOnly = true;
+            this.PluginsDataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            this.PluginsDataGridView.RowHeadersVisible = false;
+            this.PluginsDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.PluginsDataGridView.Size = new Size(467, 309);
+            this.PluginsDataGridView.TabIndex = 7;
+            this.PluginsDataGridView.TabStop = false;
+            this.PluginsDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.FromArgb(62, 72, 88);
+            this.PluginsDataGridView.ThemeStyle.AlternatingRowsStyle.Font = (Font)null;
+            this.PluginsDataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.White;
+            this.PluginsDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            this.PluginsDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            this.PluginsDataGridView.ThemeStyle.BackColor = Color.FromArgb(35, 35, 35);
+            this.PluginsDataGridView.ThemeStyle.GridColor = Color.FromArgb(62, 72, 88);
+            this.PluginsDataGridView.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(58, 61, 76);
+            this.PluginsDataGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.Single;
+            this.PluginsDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
+            this.PluginsDataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            this.PluginsDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.PluginsDataGridView.ThemeStyle.HeaderStyle.Height = 20;
+            this.PluginsDataGridView.ThemeStyle.ReadOnly = true;
+            this.PluginsDataGridView.ThemeStyle.RowsStyle.BackColor = Color.FromArgb(62, 72, 88);
+            this.PluginsDataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.None;
+            this.PluginsDataGridView.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
+            this.PluginsDataGridView.ThemeStyle.RowsStyle.ForeColor = Color.White;
+            this.PluginsDataGridView.ThemeStyle.RowsStyle.Height = 22;
+            this.PluginsDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.SteelBlue;
+            this.PluginsDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
+            this.PluginsDataGridView.MouseDown += new MouseEventHandler(this.PluginsDataGridView_onMouseDown);
+            this.FlagCol.FillWeight = 8f;
+            this.FlagCol.HeaderText = "";
+            this.FlagCol.Name = "FlagCol";
+            this.FlagCol.ReadOnly = true;
+            this.StatusCol.FillWeight = 50f;
+            this.StatusCol.HeaderText = "Status";
+            this.StatusCol.Name = "StatusCol";
+            this.StatusCol.ReadOnly = true;
+            this.NameCol.FillWeight = 60f;
+            this.NameCol.HeaderText = "Name";
+            this.NameCol.Name = "NameCol";
+            this.NameCol.ReadOnly = true;
+            this.SizeCol.FillWeight = 30f;
+            this.SizeCol.HeaderText = "Size";
+            this.SizeCol.Name = "SizeCol";
+            this.SizeCol.ReadOnly = true;
+            this.PlugincontextMenuStrip.BackColor = Color.FromArgb(58, 61, 76);
+            this.PlugincontextMenuStrip.Items.AddRange(new ToolStripItem[1]
+            {
+        (ToolStripItem) this.btnInstall
+            });
+            this.PlugincontextMenuStrip.Name = "hVNCContextMenuStrip";
+            this.PlugincontextMenuStrip.RenderStyle.ArrowColor = Color.FromArgb(151, 143, (int)byte.MaxValue);
+            this.PlugincontextMenuStrip.RenderStyle.BorderColor = Color.Gainsboro;
+            this.PlugincontextMenuStrip.RenderStyle.ColorTable = (ProfessionalColorTable)null;
+            this.PlugincontextMenuStrip.RenderStyle.RoundedEdges = true;
+            this.PlugincontextMenuStrip.RenderStyle.SelectionArrowColor = Color.White;
+            this.PlugincontextMenuStrip.RenderStyle.SelectionBackColor = Color.FromArgb(100, 88, (int)byte.MaxValue);
+            this.PlugincontextMenuStrip.RenderStyle.SelectionForeColor = Color.White;
+            this.PlugincontextMenuStrip.RenderStyle.SeparatorColor = Color.Gainsboro;
+            this.PlugincontextMenuStrip.RenderStyle.TextRenderingHint = TextRenderingHint.SystemDefault;
+            this.PlugincontextMenuStrip.Size = new Size(106, 26);
+            this.btnInstall.BackColor = Color.FromArgb(58, 61, 76);
+            this.btnInstall.ForeColor = Color.White;
+            this.btnInstall.Image = (Image)Resources.package_go;
+            this.btnInstall.Name = "btnInstall";
+            this.btnInstall.Size = new Size(105, 22);
+            this.btnInstall.Text = "Install";
+            this.btnInstall.Click += new EventHandler(this.btnInstall_Click);
+            this.panelTop.BackColor = Color.FromArgb(58, 61, 76);
+            this.panelTop.BorderColor = Color.FromArgb((int)byte.MaxValue, 128, 128);
+            this.panelTop.Controls.Add((Control)this.btnGetLogs);
+            this.panelTop.Dock = DockStyle.Top;
+            this.panelTop.ForeColor = Color.White;
+            this.panelTop.Location = new Point(0, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new Size(467, 36);
+            this.panelTop.TabIndex = 12;
+            this.btnGetLogs.Animated = true;
+            this.btnGetLogs.BackColor = Color.FromArgb(62, 72, 88);
+            this.btnGetLogs.BorderColor = Color.FromArgb(72, 82, 98);
+            this.btnGetLogs.BorderRadius = 2;
+            this.btnGetLogs.BorderThickness = 1;
+            this.btnGetLogs.DisabledState.BorderColor = Color.DarkGray;
+            this.btnGetLogs.DisabledState.CustomBorderColor = Color.DarkGray;
+            this.btnGetLogs.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            this.btnGetLogs.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            this.btnGetLogs.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            this.btnGetLogs.FillColor = Color.FromArgb(35, 35, 35);
+            this.btnGetLogs.FillColor2 = Color.FromArgb(62, 72, 88);
+            this.btnGetLogs.Font = new Font("Segoe UI", 8.25f);
+            this.btnGetLogs.ForeColor = Color.White;
+            this.btnGetLogs.GradientMode = LinearGradientMode.ForwardDiagonal;
+            this.btnGetLogs.Image = (Image)Resources.refresh;
+            this.btnGetLogs.ImageSize = new Size(16, 16);
+            this.btnGetLogs.Location = new Point(12, 7);
+            this.btnGetLogs.Name = "btnGetLogs";
+            this.btnGetLogs.Size = new Size(111, 23);
+            this.btnGetLogs.TabIndex = 32;
+            this.btnGetLogs.Text = "Refresh";
+            this.btnGetLogs.Click += new EventHandler(this.btnGetLogs_Click);
+            this.DataGridFlagImageList.ImageStream = (ImageListStreamer)resources.GetObject("DataGridFlagImageList.ImageStream");
+            this.DataGridFlagImageList.TransparentColor = Color.Transparent;
+            this.DataGridFlagImageList.Images.SetKeyName(0, "tick.png");
+            this.DataGridFlagImageList.Images.SetKeyName(1, "page_red.png");
+            this.statusStrip.BackColor = Color.Transparent;
+            this.statusStrip.ImageScalingSize = new Size(24, 24);
+            this.statusStrip.Items.AddRange(new ToolStripItem[1]
+            {
+        (ToolStripItem) this.StatusToolStripStatusLabel
+            });
+            this.statusStrip.Location = new Point(0, 320);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.RenderMode = ToolStripRenderMode.Professional;
+            this.statusStrip.Size = new Size(467, 25);
+            this.statusStrip.TabIndex = 13;
+            this.statusStrip.Text = "statusStrip1";
+            this.StatusToolStripStatusLabel.AutoSize = false;
+            this.StatusToolStripStatusLabel.ForeColor = Color.White;
+            this.StatusToolStripStatusLabel.Image = (Image)Resources.flag_red;
+            this.StatusToolStripStatusLabel.ImageAlign = ContentAlignment.MiddleLeft;
+            this.StatusToolStripStatusLabel.ImageScaling = ToolStripItemImageScaling.None;
+            this.StatusToolStripStatusLabel.Margin = new Padding(3, 3, 0, 2);
+            this.StatusToolStripStatusLabel.Name = "StatusToolStripStatusLabel";
+            this.StatusToolStripStatusLabel.Size = new Size(300, 20);
+            this.StatusToolStripStatusLabel.Text = "Status: Loading..";
+            this.AutoScaleDimensions = new SizeF(6f, 13f);
+            this.AutoScaleMode = AutoScaleMode.Font;
+            this.BackColor = Color.FromArgb(48, 51, 66);
+            this.ClientSize = new Size(467, 345);
+            this.Controls.Add((Control)this.statusStrip);
+            this.Controls.Add((Control)this.PluginsDataGridView);
+            this.Controls.Add((Control)this.panelTop);
+            this.Icon = (Icon)resources.GetObject("$this.Icon");
+            this.MinimumSize = new Size(483, 384);
+            this.Name = "FrmPlugins";
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Text = "Plugin Viewer";
+            this.FormClosing += new FormClosingEventHandler(this.FrmPlugins_FormClosing);
+            this.Load += new EventHandler(this.FrmPlugins_Load);
+            ((ISupportInitialize)this.PluginsDataGridView).EndInit();
+            this.PlugincontextMenuStrip.ResumeLayout(false);
+            this.panelTop.ResumeLayout(false);
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+
+        private Guna2DataGridView PluginsDataGridView;
+        private Guna2GradientPanel panelTop;
+        private Guna2GradientButton btnGetLogs;
+        private ImageList DataGridFlagImageList;
+        private StatusStrip statusStrip;
+        private ToolStripStatusLabel StatusToolStripStatusLabel;
+        private DataGridViewImageColumn FlagCol;
+        private DataGridViewTextBoxColumn StatusCol;
+        private DataGridViewTextBoxColumn NameCol;
+        private DataGridViewTextBoxColumn SizeCol;
+        private Guna2ContextMenuStrip PlugincontextMenuStrip;
+        private ToolStripMenuItem btnInstall;
+    }
+}
