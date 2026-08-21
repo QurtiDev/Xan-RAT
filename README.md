@@ -1,5 +1,5 @@
 # 🐀 Xan-RAT also known as Cold Xan RAT
-Contains Xan RAT, a [Quasar-based](https://github.com/quasar/Quasar) remote access trojan's full src code and detection rules, along with short analysis of it's capabilities etc
+Contains Xan RAT, a [Quasar-based](https://github.com/quasar/Quasar) remote access trojan's full src code and detection rules, along with short analysis of it's capabilities, etc.
 
 
 
@@ -14,7 +14,7 @@ Contains Xan RAT, a [Quasar-based](https://github.com/quasar/Quasar) remote acce
 
 > [!NOTE]
 > 
-> I'm not the original developer of the Cold Xan RAT; I've simply assembled this into a compilable stage with some plugins so it can be tested in an authorized enviroment and properly ruled for research purposes, although some code may be changed and modified a bit from the original due to issues/bugs that it had.
+> I'm not the original developer of the Cold Xan RAT; I've simply assembled this into a compilable stage with some plugins so it can be tested in an authorized environment and properly ruled for research purposes, although some code may be changed and modified a bit from the original due to issues/bugs that it had.
 > 
 
 > [!CAUTION]
@@ -42,7 +42,7 @@ Contributions are welcome, especially in the following areas:
 
 - Improving detection rules YARA, Sigma(We're already planning to add but you can also do so), etc.) and reducing false positives
 
-- Adding support for new RAT families or variants of this, either public or prviate
+- Adding support for new RAT families or variants of this, either public or private
 
 - Enhancing build scripts(the raw dlls should be pulled from their respective build repos not hardcoded, for now it's fine) and documentation of usage for research
 
