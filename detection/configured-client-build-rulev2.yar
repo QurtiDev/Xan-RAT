@@ -1,6 +1,6 @@
 rule file_Client {
     meta:
-        description = "Release - file Client.exe"
+        description = "Release - file Client.exe | Detects Obfuscated/Confused-Crypted Xan-RAT Client/stub"
         author = "Qurti, Dashell, Miikie, NetZer0"
         reference = "Cold-Xan-RAT research"
         date = "2026-08-22"
@@ -28,6 +28,9 @@ rule file_Client {
         $s19 = "User refused the elevation requests." wide ascii
         $s20 = ", try running client as administrator" wide ascii
 
+        $aes1 = "Aes256" ascii wide
+        $aes2 = "InvokedCommon.Cryptography" wide ascii
+
         $op0 = { 28 13 00 00 06 26 20 00 0c 00 00 28 34 00 00 0a }
         $op1 = { 02 00 05 00 04 81 08 00 8c f4 00 00 01 }
         $op2 = { 14 00 00 06 20 ae 00 00 e4 d2 07 }
@@ -35,6 +38,8 @@ rule file_Client {
     condition:
         uint16(0) == 0x5a4d and
         filesize < 2000KB and
+        any of ($aes*) and
         any of ($s2, $s5, $s6, $s9, $s10, $s11, $s14, $s16, $s19, $s20) and
-        5 of ($s*)
+        5 of ($s*) or
+        1 of ($op*)
 }
