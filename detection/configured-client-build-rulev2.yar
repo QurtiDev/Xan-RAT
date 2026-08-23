@@ -3,8 +3,9 @@ rule file_Client {
         description = "Release - file Client.exe"
         author = "Qurti, Dashell, Miikie, NetZer0"
         reference = "Cold-Xan-RAT research"
-        date = "2026-08-22"
+        date = "2026-08-20"
         hash1 = "d517a4234d1fad5aecb6f3678b0a22ef980cda5094a904badae16dd4f864e3c2"
+        score = 75
 
     strings:
         $s6 = "costura.system.diagnostics.diagnosticsource.dll.compressed|4.0.1.0|System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture" fullword ascii
@@ -30,6 +31,8 @@ rule file_Client {
         $s26 = "client" wide ascii
         $s27 = "Successfully displayed MessageBox" wide ascii
         $s28 = "\n>> New Session created\n" wide ascii
+        $s29 = "Visted Website" wide ascii
+        $s30 = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A" wide ascii
 
         
 
