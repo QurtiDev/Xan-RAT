@@ -32,7 +32,9 @@ rule file_Client {
         $s28 = "\n>> New Session created\n" wide ascii
         $s29 = "Visted Website" wide ascii
         $s30 = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A" wide ascii
-
+        $s31 = "User refused the elevation requests." wide ascii
+        $s32 = "Process already elevated." wide ascii
+        $s33 = ", try running client as administrator" wide ascii
         
 
         $op0 = { 28 13 00 00 06 26 20 00 0c 00 00 28 34 00 00 0a }
