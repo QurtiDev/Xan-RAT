@@ -24,7 +24,7 @@ Contains Xan RAT, a [Quasar-based](https://github.com/quasar/Quasar) remote acce
 >The author(s) of this repository assume no liability for ANY misuse, damages, or legal consequences resulting from the use of this software or anything this repository contains!
 >OBTAIN WRITTEN PERMISSION TO USE! This is intended for ONLY AUTHORIZED USE
 >
->Warning that the repo includes third-party libraries in lib. If you want to rebuild and obtain them yourself, you can obviously do so. This should NEVER be run in a production environment-only in a testing environment.
+>Warning that the repo includes third-party libraries in lib. If you want to rebuild and obtain them yourself, you can obviously do so. This should NEVER be run in a production environment! Only in a testing environment.
 
 > [!TIP]
 > Detection rules we've written for this malware can be found in the following places in this repository
