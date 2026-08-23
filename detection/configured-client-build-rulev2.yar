@@ -3,9 +3,8 @@ rule file_Client {
         description = "Release - file Client.exe"
         author = "Qurti, Dashell, Miikie, NetZer0"
         reference = "Cold-Xan-RAT research"
-        date = "2026-08-20"
+        date = "2026-08-22"
         hash1 = "d517a4234d1fad5aecb6f3678b0a22ef980cda5094a904badae16dd4f864e3c2"
-        score = 75
 
     strings:
         $s6 = "costura.system.diagnostics.diagnosticsource.dll.compressed|4.0.1.0|System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture" fullword ascii
