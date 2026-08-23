@@ -35,5 +35,6 @@ rule file_Client {
     condition:
         uint16(0) == 0x5a4d and
         filesize < 2000KB and
-        (8 of ($s*) or 1 of ($op*))
+        any of ($s2, $s5, $s6, $s9, $s10, $s11, $s14, $s16, $s19, $s20) and
+        5 of ($s*)
 }
