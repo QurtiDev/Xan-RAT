@@ -42,7 +42,7 @@ Contributions are welcome, especially in the following areas:
 
 - Improving detection rules YARA, Sigma(We're already planning to add but you can also do so), etc.) and reducing false positives
 
-- Adding support for new RAT families or variants of this, either public or private
+- Adding support for new RAT families detections which are similar or variants of this.
 
 - Enhancing build scripts(the raw dlls should be pulled from their respective build repos not hardcoded, for now it's fine) and documentation of usage for research
 
