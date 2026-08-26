@@ -9,7 +9,7 @@ Contains Xan RAT, a [Quasar-based](https://github.com/quasar/Quasar) remote acce
 [NZ0](https://github.com/Net-Zer0) - Guidance on writing YARA rules & helping in a lot of areas related to the project </br>
 [Miikie](https://github.com/miikie) - Helping with writing YARA rules! </br>
 [Dashell](https://github.com/DashellF) - Helping with writing YARA rules!!  </br>
-
+[OnyxCinder](https://github.com/OnyxCinder) - Generally helping with the project!!
 
 
 > [!NOTE]
