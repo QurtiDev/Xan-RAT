@@ -30,7 +30,7 @@ Contains Xan RAT, a [Quasar-based](https://github.com/quasar/Quasar) remote acce
 > Detection rules we've written for this malware can be found in the following places in this repository
 >
 > - [Cold Xan Ruleset](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/cold-xan-rat-ruleset.yar) </br>
-> - [Configured Xan Client Ruleset](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/configured-client-build-rule.yar) </br>
+> - [Configured Xan Client Ruleset](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/configured-client-build-rulev3.yar) </br>
 > - [Base Quasar Ruleset](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/base-quasar-rules.yar) </br>
 >
 >Note that these are WIP, and still being actively refined and worked on, feel free to modify as needed!!
