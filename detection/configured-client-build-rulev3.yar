@@ -3,7 +3,7 @@ rule file_Client {
         description = "Release - file Client.exe | Detects Obfuscated/Confused-Crypted Xan-RAT Client/stub"
         author = "Qurti, Dashell, Miikie, NetZer0"
         reference = "Cold-Xan-RAT research"
-        date = "2026-08-22"
+        date = "2026-08-26"
         hash1 = "d517a4234d1fad5aecb6f3678b0a22ef980cda5094a904badae16dd4f864e3c2"
 
     strings:
