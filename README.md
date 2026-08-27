@@ -1,4 +1,6 @@
 # 🐀 Xan-RAT also known as Cold Xan RAT
+<img src="https://github.com/user-attachments/assets/7f74fa0b-6439-4c7e-a766-6d9773432fc5" />
+
 Contains Xan RAT, a [Quasar-based](https://github.com/quasar/Quasar) remote access trojan's full src code and detection rules, along with short analysis of it's capabilities, etc.
 
 
