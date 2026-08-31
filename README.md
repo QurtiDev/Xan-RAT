@@ -35,6 +35,10 @@ Contains Xan RAT, a [Quasar-based](https://github.com/quasar/Quasar) remote acce
 > - [Configured Xan Client Ruleset](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/configured-client-build-rulev3.yar) </br>
 > - [Base Quasar Ruleset](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/base-quasar-rules.yar) </br>
 >
+> Scanning usage example in your environment using the YARA tool: yara -r r.yar
+> 
+> Replace r.yar with the rule file's name
+>
 >Note that these are WIP, and still being actively refined and worked on, feel free to modify as needed!!
 
 </br>
