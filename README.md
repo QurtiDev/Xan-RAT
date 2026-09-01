@@ -42,8 +42,8 @@ Contains Xan RAT, a [Quasar-based](https://github.com/quasar/Quasar) remote acce
 >
 >
 >  ##### Sigma Detection Rules:
-> - [Xan RAT Client Updater](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/xanrat-client-update.yml)
-> - [Xan RAT Keylogger](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/xanrat-keylogger.yml)
+> - [Xan RAT Client Updater Ruleset](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/xanrat-client-update.yml)
+> - [Xan RAT Keylogger Rule](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/xanrat-keylogger.yml)
 >
 > Note that these are WIP, and still being actively refined and worked on, feel free to modify as needed!!
 
