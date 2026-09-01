@@ -11,8 +11,8 @@ Contains Xan RAT, a [Quasar-based](https://github.com/quasar/Quasar) remote acce
 [NZ0](https://github.com/Net-Zer0) - Guidance on writing YARA rules & helping in a lot of areas related to the project </br>
 [Miikie](https://github.com/miikie) - Helping with writing YARA rules! </br>
 [Dashell](https://github.com/DashellF) - Helping with writing YARA rules!!  </br>
-[OnyxCinder](https://github.com/OnyxCinder) - Generally helping with the project!!
-
+[OnyxCinder](https://github.com/OnyxCinder) - Generally helping with the project!! </br>
+[Wok](https://github.com/wokky-wok) - Helping with writing Sigma detection rules!
 
 > [!NOTE]
 > 
@@ -29,17 +29,23 @@ Contains Xan RAT, a [Quasar-based](https://github.com/quasar/Quasar) remote acce
 >Warning that the repo includes third-party libraries in lib. If you want to rebuild and obtain them yourself, you can obviously do so. This should NEVER be run in a production environment! Only in a testing environment.
 
 > [!TIP]
-> Detection rules we've written for this malware can be found in the following places in this repository
+> ### Rulesets
+> Detection rules we've written for this malware can be found in the following places in this repository:
 >
+> ##### YARA Detection Rules:
 > - [Cold Xan Ruleset](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/cold-xan-rat-ruleset.yar) </br>
 > - [Configured Xan Client Ruleset](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/configured-client-build-rulev3.yar) </br>
 > - [Base Quasar Ruleset](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/base-quasar-rules.yar) </br>
+>  
+>  Scanning usage example in your environment using the YARA tool: yara -r r.yar
+>   - Replace r.yar with the rule file's name
 >
-> Scanning usage example in your environment using the YARA tool: yara -r r.yar
-> 
-> Replace r.yar with the rule file's name
 >
->Note that these are WIP, and still being actively refined and worked on, feel free to modify as needed!!
+>  ##### Sigma Detection Rules:
+> - [Xan RAT Client Updater](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/xanrat-client-update.yml)
+> - [Xan RAT Keylogger](https://github.com/QurtiDev/Xan-RAT/blob/main/detection/xanrat-keylogger.yml)
+>
+> Note that these are WIP, and still being actively refined and worked on, feel free to modify as needed!!
 
 </br>
 
