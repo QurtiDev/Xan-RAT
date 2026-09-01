@@ -1,0 +1,14 @@
+title: Xanrat keylogger file creation
+id: ad57b611-7f2b-466d-9072-becb247f08fe
+description: Detects Xanrat based on keylogger files that are automatically generated with a date as name, eg 2026-08-31 
+status: test
+author: wok
+date: 2026-08-31
+logsource:
+  category: file_event
+  product: windows
+detection:
+  filename:
+    TargetFilename|re: 'C:\\Users\\[^\\]+\\AppData\\Roaming\\.*\\\d{4}-\d{2}-\d{2}$'
+condition: filename 
+level: high

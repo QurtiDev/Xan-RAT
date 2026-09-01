@@ -1,0 +1,47 @@
+title: Xanrat batch file creation and execution
+description: Detects Xanrat based on batch files that are always created in the same folder shortly after executed with cmd.exe
+status: test
+author: wok
+date: 2026-09-01
+correlation:
+  type: temporal
+  rules:
+    - 7dd7cdd0-337a-46cd-9a57-73720aa41c47
+    - 03b28df2-8254-4f86-bfe2-6e6cb0e20694
+  timespan: 1s
+level: medium
+falsepositives:
+  - legitmate software install
+
+---
+
+title: Xanrat Batch file creation
+id: 7dd7cdd0-337a-46cd-9a57-73720aa41c47
+description: Detects the creation of batch files created in users local temp folder
+logsource:
+  category: file_event
+  product: windows
+detection:
+  filename:
+    TargetFilename|re: 'C:\\Users\\[^\\]+\\AppData\\Local\\Temp\\[A-Za-z0-9]+\.bat'
+condition: filename 
+level: medium
+falsepositives:
+  - legitmate software install
+
+---
+
+title: Xanrat Batch file creation
+description: Detects the execution of batch files created in users local temp folder
+id: 03b28df2-8254-4f86-bfe2-6e6cb0e20694
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    Image|endswith: '\cmd.exe'
+    commandLine|re: 'C:\\Users\\[^\\]+\\AppData\\Local\\Temp\\[A-Za-z0-9]+\.bat'
+condition: selection 
+level: medium
+falsepositives:
+  - legitmate software install
